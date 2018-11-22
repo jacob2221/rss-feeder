@@ -1,0 +1,21 @@
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1 style="text-align:center">
+    {{ title }} {{today | date:'mediumDate':'vi_VN'}}
+  </h1>
+  <br><br>
+  <div>
+  <accordion *ngFor="let feed of allFeeds" [showArrows]="true" >
+  <accordion-group heading="{{feed.feedName}}">
+     <ul *ngFor="let feedItems of feed.feedItems">
+	<li><a href="{{feedItems.link}}" target="_blank">{{feedItems.title}}</a></li>
+	</ul>
+  </accordion-group>
+  </accordion>
+  </div>
+    
+</div>
+
+
+<router-outlet></router-outlet>
